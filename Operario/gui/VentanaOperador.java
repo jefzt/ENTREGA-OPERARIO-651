@@ -150,7 +150,7 @@ public class VentanaOperador extends JFrame implements ActionListener {
 		if(e.getSource()== btnRegistrar) Registrar ();
 		if(e.getSource() == btnCancelar)  Cancelar ();
 		if(e.getSource()==btnNConsultar) ConsultarIndividual ();
-		if(e.getSource()== btnConsultarLista) { miModelo.ConsultarOperadorLista();
+		if(e.getSource()== btnConsultarLista) { miModelo.mostrarLista();
 		}		
 	}
 
@@ -162,7 +162,7 @@ public class VentanaOperador extends JFrame implements ActionListener {
 
 	private void ConsultarIndividual() {
 		String documento=textDocumento.getText();
-		Operador miOpera =miModelo.consultarOperadorPorDocumento(documento);
+		Operador miOpera = miModelo.buscarOperador(documento);
 		
 		if (miOpera!= null) {
 			System.out.println("Objeto encontrado: "+miOpera);
